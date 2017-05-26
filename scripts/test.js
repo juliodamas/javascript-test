@@ -104,10 +104,12 @@ function validateTriangule() {
 }
 
 function randomShape() {
-    var first = coordinates[0];
-    var last = coordinates[coordinates.length - 1];
-    var dist = getDistance(first, last);
-    swal("Distance", "Distance from the first click until the last one: " + parseInt(dist), "success");
+    if (coordinates.length > 0) {
+        var first = coordinates[0];
+        var last = coordinates[coordinates.length - 1];
+        var dist = getDistance(first, last);
+        swal("Distance", "Distance from the first click until the last one: " + parseInt(dist), "success");
+    }
 }
 
 function getDistance(a, b) {
