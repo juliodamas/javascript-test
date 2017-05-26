@@ -130,7 +130,7 @@ function getResponse(isSquare, area, points, type) {
     points = window.btoa(points);
     var restUrl = url + (isSquare ? 'square?area=' + area : 'triangle?area='+area+'&type=' + type + '') +'&points=' + points;
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", restUrl, true);
+    xhttp.open("GET", restUrl, false);
     xhttp.addEventListener("load", function() {
          $('#response').val(xhttp.responseText);
     });
